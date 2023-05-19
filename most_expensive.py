@@ -10,9 +10,16 @@ def most_expensive(file_path: str) -> str:
     Returns:
         str: most expensive item
     """
-    pass
+    max = 0
+    y = json.loads(file_path)
+    u = y.values()
+    for i in u:
 
-# test
-file_path = "data.json"
-most_expensive_item = most_expensive(file_path)
-print(most_expensive_item)
+        if max<i:
+            max = i
+
+    return max
+
+f = open('data.json','r')
+x = f.read()
+print(most_expensive(x))
